@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Backend\CategoryController;
+use App\Http\Controllers\Backend\SubCategoryController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -37,3 +38,17 @@ Route::get('/edit/category/{id}', [CategoryController::class, 'EditCategory'])->
 Route::post('/update/category/{id}', [CategoryController::class, 'UpdateCategory'])->name('update.category');
 
 Route::get('/delete/category/{id}', [CategoryController::class, 'DeleteCategory'])->name('delete.category');
+
+//subcategory
+
+Route::get('/subcategories', [SubCategoryController::class, 'Index'])->name('subcategories');
+
+Route::get('/add/subcategory', [SubCategoryController::class, 'AddSubCategory'])->name('add.subcategory');
+
+Route::post('/store/subcategory', [SubCategoryController::class, 'StoreSubCategory'])->name('store.subcategory');
+
+Route::get('/edit/subcategory/{id}', [SubCategoryController::class, 'EditSubCategory'])->name('edit.subcategory');
+
+Route::post('/update/subcategory/{id}', [SubCategoryController::class, 'UpdateSubCategory'])->name('update.subcategory');
+
+Route::get('/delete/subcategory/{id}', [SubCategoryController::class, 'DeleteSubCategory'])->name('delete.subcategory');
