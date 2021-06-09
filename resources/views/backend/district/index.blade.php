@@ -33,11 +33,11 @@
 <div class="col-lg-12 grid-margin stretch-card">
                 <div class="card">
                   <div class="card-body">
-                    <h4 class="card-title">Category Page </h4>
+                    <h4 class="card-title">District Page </h4>
 
 
               <div class="template-demo">
-  <a href="{{ route('add.category')  }}"><button type="button" class="btn btn-primary btn-fw" style="float: right;">Add Category</button></a>	              	
+  <a href="{{route('add.district')}}"><button type="button" class="btn btn-primary btn-fw" style="float: right;">Add District</button></a>	              	
               </div>
                     
       
@@ -46,23 +46,23 @@
                         <thead>
                           <tr>
                             <th> # </th>
-                            <th>Category English </th>
-                            <th> Category Hindi </th>
+                            <th>District English </th>
+                            <th>District Hindi </th>
                             <th> Action </th>
                              
                           </tr>
                         </thead>
                         <tbody>
                @php($i = 1)
-           @foreach($category as $row)
+           @foreach($district as $row)
       <tr>
         <td> {{ $i++ }} </td>
-        <td> {{ $row->category_en }} </td>
+        <td> {{ $row->district_en }} </td>
          
-        <td>{{ $row->category_hin }} </td>
+        <td>{{ $row->district_hin }} </td>
         <td> 
-    <a href="{{ route('edit.category',$row->id) }}" class="btn btn-info">Edit</a>
-    <a href="{{ route('delete.category',$row->id) }}" onclick="return confirm('Are you sure to delete')" class="btn btn-danger">Delete</a>
+    <a href="{{route('edit.district', $row->id)}}" class="btn btn-info">Edit</a>
+    <a href="{{route('delete.district', $row->id)}}" onclick="return confirm('Are you sure to delete')" class="btn btn-danger">Delete</a>
 
          </td>
       </tr>
@@ -70,7 +70,7 @@
                            
                         </tbody>
                       </table>
-                      {{ $category->links('pagination-links') }}
+                      {{ $district->links('pagination-links') }}
                     </div>
                   </div>
                 </div>

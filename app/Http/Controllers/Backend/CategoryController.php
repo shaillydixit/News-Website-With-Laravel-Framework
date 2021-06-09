@@ -53,7 +53,7 @@ class CategoryController extends Controller
         DB::table('categories')->where('id', $id)->delete();
         $notification = array(
             'message' => 'Category Deleted Successfully!',
-            'alert-type' => 'success',
+            'alert-type' => 'error',
         );
         return Redirect()->route('categories')->with($notification);
     }
