@@ -85,6 +85,7 @@ Route::post('/update/subdistrict/{id}', [SubDistrictController::class, 'UpdateSu
 Route::get('/delete/subdistrict/{id}', [SubDistrictController::class, 'DeleteSubDistrict'])->name('delete.subdistrict');
 
 //post
+Route::get('/allpost', [PostController::class, 'index'])->name('all.post');
 
 Route::get('/createpost', [PostController::class, 'Create'])->name('create.post');
 
