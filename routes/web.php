@@ -7,6 +7,7 @@ use App\Http\Controllers\Backend\SubCategoryController;
 use App\Http\Controllers\Backend\DistrictController;
 use App\Http\Controllers\Backend\SubDistrictController;
 use App\Http\Controllers\Backend\PostController;
+use App\Http\Controllers\Backend\SettingController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -102,3 +103,14 @@ Route::get('/delete/post/{id}', [PostController::class, 'DeletePost'])->name('de
 Route::get('/get/subcategory/{category_id}', [PostController::class, 'GetSubCategory']);
 
 Route::get('/get/subdistrict/{district_id}', [PostController::class, 'GetSubDistrict']);
+
+
+//social
+
+Route::get('/social/setting', [SettingController::class, 'SocialSetting'])->name('social.setting');
+
+Route::post('/social/update/{id}', [SettingController::class, 'SocialUpdate'])->name('update.social');
+
+Route::get('/seo/setting', [SettingController::class, 'SeoSetting'])->name('seo.setting');
+
+Route::post('/seo/update/{id}', [SettingController::class, 'SeoUpdate'])->name('update.seo');
