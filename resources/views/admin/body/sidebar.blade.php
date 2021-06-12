@@ -132,6 +132,12 @@ aria-expanded="false" aria-controls="setting">
     <li class="nav-item"> <a class="nav-link" 
     href="{{route('seo.setting')}}"> Seo Settings </a></li>
 
+    <li class="nav-item"> <a class="nav-link" 
+    href="{{route('livetv.setting')}}"> LiveTV Settings </a></li>
+
+    <li class="nav-item"> <a class="nav-link" 
+    href="{{route('notice.setting')}}"> Notice Settings </a></li>
+
   </ul>
 </div>
 </li>

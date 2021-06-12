@@ -105,7 +105,7 @@ Route::get('/get/subcategory/{category_id}', [PostController::class, 'GetSubCate
 Route::get('/get/subdistrict/{district_id}', [PostController::class, 'GetSubDistrict']);
 
 
-//social
+//social and seo
 
 Route::get('/social/setting', [SettingController::class, 'SocialSetting'])->name('social.setting');
 
@@ -114,3 +114,21 @@ Route::post('/social/update/{id}', [SettingController::class, 'SocialUpdate'])->
 Route::get('/seo/setting', [SettingController::class, 'SeoSetting'])->name('seo.setting');
 
 Route::post('/seo/update/{id}', [SettingController::class, 'SeoUpdate'])->name('update.seo');
+
+//Livetv
+
+Route::get('/livetv/setting', [SettingController::class, 'LiveTvSetting'])->name('livetv.setting');
+
+Route::post('/livetv/update/{id}', [SettingController::class, 'LiveTvUpdate'])->name('update.livetv');
+
+Route::get('/livetv/active/{id}', [SettingController::class, 'ActiveSetting'])->name('active.livetv');
+
+Route::get('/livetv/deactive/{id}', [SettingController::class, 'DeactiveSetting'])->name('deactive.livetv');
+
+Route::get('/notice/setting', [SettingController::class, 'NoticeSetting'])->name('notice.setting');
+
+Route::post('/notice/update/{id}', [SettingController::class, 'NoticeUpdate'])->name('update.notice');
+
+Route::get('/notice/active/{id}', [SettingController::class, 'ActiveNotice'])->name('active.notice');
+
+Route::get('/notice/deactive/{id}', [SettingController::class, 'DeactiveNotice'])->name('deactive.notice');
