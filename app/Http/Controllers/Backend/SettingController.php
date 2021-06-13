@@ -125,4 +125,50 @@ class SettingController extends Controller
         return Redirect()->back()->with($notification);
     }
 
+    public function WebsiteSetting(){
+        $website = DB::table('websites')->orderBy('id', 'desc')->paginate(5);
+        return view ('backend.website.index', compact ('website'));
+    }
+
+    public function AddWebsiteSetting(){
+        return view('backend.website.create');
+    }
+
+    public function StoreWebsite(Request $request){
+        $data = array();
+        $data['website_name'] = $request->website_name;
+        $data['website_link'] = $request->website_link;
+        DB::table('websites')->insert($data);
+
+        $notification = array(
+            'message' => 'website stroed successfully',
+            'alert-type' => 'success'
+        );
+        return Redirect()->route('all.website')->with($notification);
+    }
+
+    public function EditWebsite($id){
+        $website = DB::table('websites')->where('id', $id)->first();
+        return view('backend.website.edit', compact('website'));
+    }
+    public function UpdateWebsite(Request $request, $id){
+        $data = array();
+        $data['website_name'] = $request->website_name;
+        $data['website_link'] = $request->website_link;
+        DB::table('websites')->where('id', $id)->update($data);
+            $notification = array(
+            'message' => 'Website Link Updated Successfully!',
+            'alert-type' => 'success',
+        );
+        return Redirect()->route('all.website')->with($notification);
+    }
+    public function DeleteWebsite($id){
+        DB::table('websites')->where('id', $id)->delete();
+        $notification = array(
+            'message' => 'Website Link Deleted Successfully!',
+            'alert-type' => 'error',
+        );
+        return Redirect()->route('all.website')->with($notification);
+    }
+
 }
