@@ -8,6 +8,7 @@ use App\Http\Controllers\Backend\DistrictController;
 use App\Http\Controllers\Backend\SubDistrictController;
 use App\Http\Controllers\Backend\PostController;
 use App\Http\Controllers\Backend\SettingController;
+use App\Http\Controllers\Backend\GalleryController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -147,3 +148,19 @@ Route::get('/edit/website/{id}', [SettingController::class, 'EditWebsite'])->nam
 Route::get('/delete/website/{id}', [SettingController::class, 'DeleteWebsite'])->name('delete.website');
 
 Route::post('/website/update/{id}', [SettingController::class, 'UpdateWebsite'])->name('update.website');
+
+//gallary
+
+Route::get('/photo/gallery', [GalleryController::class, 'PhotoGallery'])->name('photo.gallery');
+
+Route::get('/add/photo', [GalleryController::class, 'AddPhoto'])->name('add.photo');
+
+Route::post('/store/photo', [GalleryController::class, 'StorePhoto'])->name('store.photo');
+
+
+//video
+Route::get('/video/gallery', [GalleryController::class, 'VideoGallery'])->name('video.gallery');
+
+Route::get('/add/video', [GalleryController::class, 'AddVideo'])->name('add.video');
+
+Route::post('/store/video', [GalleryController::class, 'StoreVideo'])->name('store.video');
