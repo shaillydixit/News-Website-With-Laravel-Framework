@@ -21,7 +21,7 @@ use App\Http\Controllers\Backend\GalleryController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('main.home');
 });
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
