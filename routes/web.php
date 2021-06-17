@@ -9,6 +9,7 @@ use App\Http\Controllers\Backend\SubDistrictController;
 use App\Http\Controllers\Backend\PostController;
 use App\Http\Controllers\Backend\SettingController;
 use App\Http\Controllers\Backend\GalleryController;
+use App\Http\Controllers\Frontend\ExtraController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -164,3 +165,10 @@ Route::get('/video/gallery', [GalleryController::class, 'VideoGallery'])->name('
 Route::get('/add/video', [GalleryController::class, 'AddVideo'])->name('add.video');
 
 Route::post('/store/video', [GalleryController::class, 'StoreVideo'])->name('store.video');
+
+//multilang
+
+Route::get('/lang/hindi', [ExtraController::class, 'Hindi'])->name('lang.hindi');
+
+Route::get('/lang/english', [ExtraController::class, 'English'])->name('lang.english');
+
