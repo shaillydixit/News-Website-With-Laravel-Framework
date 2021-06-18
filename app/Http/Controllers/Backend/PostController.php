@@ -129,7 +129,8 @@ class PostController extends Controller
               'message' => 'Post Updated Successfully',
               'alert-type' => 'success'
           );
- 
+          return Redirect()->route('all.post')->with($notification);
+
             
         }  else{
             $data['image'] = $oldimage;
