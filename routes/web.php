@@ -172,3 +172,5 @@ Route::get('/lang/hindi', [ExtraController::class, 'Hindi'])->name('lang.hindi')
 
 Route::get('/lang/english', [ExtraController::class, 'English'])->name('lang.english');
 
+///single
+Route::get('/view/post/{id}', [ExtraController::class, 'SinglePost']);
