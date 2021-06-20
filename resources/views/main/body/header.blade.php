@@ -35,14 +35,13 @@ $social = DB::table('socials')->first();
 $subcategory = DB::table('subcategories')->where('category_id', $row->id)->get();
 
 @endphp
-    <li class="dropdown">
-        <a href="{{ URL::to('catpost/'.$row->id.'/'.$row->category_en) }}" 
-        class="dropdown-toggle" data-toggle="dropdown">
-    @if(session()->get('lang') == 'hindi')
-        {{$row->category_hin}}
-    @else
-    {{$row->category_en}}
-    @endif
+<li class="dropdown">
+	<a href="{{ URL::to('catpost/'.$row->id.'/'.$row->category_en) }}" > 
+		@if(session()->get('lang')== 'hindi')
+		{{ $row->category_hin }}
+		@else
+		{{ $row->category_en }}
+		@endif
        <b class="caret"></b></a>
     <ul class="dropdown-menu">
     @foreach($subcategory as $row)
