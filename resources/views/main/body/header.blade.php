@@ -36,7 +36,8 @@ $subcategory = DB::table('subcategories')->where('category_id', $row->id)->get()
 
 @endphp
     <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+        <a href="{{ URL::to('catpost/'.$row->id.'/'.$row->category_en) }}" 
+        class="dropdown-toggle" data-toggle="dropdown">
     @if(session()->get('lang') == 'hindi')
         {{$row->category_hin}}
     @else
