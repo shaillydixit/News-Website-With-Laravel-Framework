@@ -223,9 +223,9 @@ style="margin-bottom:5px;">
 
 <!-- facebook-page-start -->
 <div class="cetagory-title-03">Facebook </div>
-<div class="fb-root">
-facebook page here
-</div><!-- /.facebook-page-close -->
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/hi_IN/sdk.js#xfbml=1&version=v11.0" nonce="fufsS7Su"></script>
+<div class="fb-page" data-href="https://www.facebook.com/facebook" data-tabs="" data-width="400" data-height="" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false"><blockquote cite="https://www.facebook.com/facebook" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/facebook">Facebook</a></blockquote></div>
 
 <!-- add-start -->
 <div class="row">
