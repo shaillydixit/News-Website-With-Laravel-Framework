@@ -45,7 +45,7 @@ $subcategory = DB::table('subcategories')->where('category_id', $row->id)->get()
        <b class="caret"></b></a>
     <ul class="dropdown-menu">
     @foreach($subcategory as $row)
-        <li><a href="#">
+        <li><a href="{{ URL::to('subcatpost/'.$row->id.'/'.$row->subcategory_en) }}">
         @if(session()->get('lang') == 'hindi')
         {{$row->subcategory_hin}}
          @else

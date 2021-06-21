@@ -36,4 +36,9 @@ class ExtraController extends Controller
     return view('main.allpost',compact('catposts'));
 
   }
+  public function SubCatPost($id, $subcategory_en){
+    $subcatposts = DB::table('post')->where('subcategory_id',$id)->orderBy('id','desc')->paginate(5);
+    return view('main.subpost',compact('subcatposts'));
+
+  }
 }

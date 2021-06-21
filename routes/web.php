@@ -176,3 +176,5 @@ Route::get('/lang/english', [ExtraController::class, 'English'])->name('lang.eng
 Route::get('/view/post/{id}', [ExtraController::class, 'SinglePost']);
 
 Route::get('/catpost/{id}/{category_en}', [ExtraController::class, 'CatPost']);
+
+Route::get('/subcatpost/{id}/{subcategory_en}', [ExtraController::class, 'SubCatPost']);
