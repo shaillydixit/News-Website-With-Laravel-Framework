@@ -531,6 +531,49 @@ aria-hidden="true"></i> <span><i class="fa fa-plus" aria-hidden="true"></i> рж╕р
 </div>
 </div>
 
+<br><br>
+
+<div class="row">
+
+@php
+$dis = DB::table('districts')->get();
+@endphp		
+<div class="cetagory-title-02"><a href="#">Search By District<i class="fa fa-angle-right" aria-hidden="true"></i> <span><i class="fa fa-plus" aria-hidden="true"></i>   </span></a></div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<form action="{{ route('searchby.districts') }}" method="get">
+@csrf
+<div class="row">
+<div class="col-lg-4">
+<select class="form-control" id="exampleSelectGender" name="district_id">
+<option disabled="" selected="">--Select District--</option>
+@foreach($dis as $row)
+<option value="{{ $row->id }}">{{ $row->district_en  }} </option>
+@endforeach
+</select>
+
+</div>
+
+<div class="col-lg-4">
+<select class="form-control" id="subdistrict_id" name="subdistrict_id">
+<option disabled="" selected="">--Select SubDistrict--</option>
+</select>	
+</div>
+
+<div class="col-lg-4">
+<button class="btn btn-success btn-block">Search</button>		
+</div>
+
+</div>
+
+</form>
+
+
+</div>
+
+<br><br>
+
+
 <div class="row">
 <div class="col-md-12 col-sm-12">
 <div class="sidebar-add">

@@ -178,3 +178,8 @@ Route::get('/view/post/{id}', [ExtraController::class, 'SinglePost']);
 Route::get('/catpost/{id}/{category_en}', [ExtraController::class, 'CatPost']);
 
 Route::get('/subcatpost/{id}/{subcategory_en}', [ExtraController::class, 'SubCatPost']);
+
+
+Route::get('/get/subdistrict/frontend/{district_id}', [ExtraController::class, 'GetSubDist']);
+
+Route::get('/search/district', [ExtraController::class, 'SearchDistrict'])->name('searchby.districts');
