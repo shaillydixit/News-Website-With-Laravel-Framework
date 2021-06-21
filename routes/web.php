@@ -9,6 +9,7 @@ use App\Http\Controllers\Backend\SubDistrictController;
 use App\Http\Controllers\Backend\PostController;
 use App\Http\Controllers\Backend\SettingController;
 use App\Http\Controllers\Backend\GalleryController;
+use App\Http\Controllers\Backend\AdsController;
 use App\Http\Controllers\Frontend\ExtraController;
 /*
 |--------------------------------------------------------------------------
@@ -183,3 +184,13 @@ Route::get('/subcatpost/{id}/{subcategory_en}', [ExtraController::class, 'SubCat
 Route::get('/get/subdistrict/frontend/{district_id}', [ExtraController::class, 'GetSubDist']);
 
 Route::get('/search/district', [ExtraController::class, 'SearchDistrict'])->name('searchby.districts');
+
+//ads
+
+Route::get('/list/ads', [AdsController::class, 'ListAds'])->name('list.add');
+
+Route::get('/add/ads', [AdsController::class, 'AddAds'])->name('add.ads');
+
+Route::post('/store/ads', [AdsController::class, 'StoreAds'])->name('store.ads');
+
+Route::get('/delete/ads/{id}', [AdsController::class, 'DeleteAds'])->name('delete.ads');

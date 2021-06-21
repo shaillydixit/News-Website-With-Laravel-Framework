@@ -1,7 +1,7 @@
 @php
 $category = DB::table('categories')->orderBy('id', 'asc')->get();
 $social = DB::table('socials')->first();
-
+$horizontal = DB::table('ads')->where('type', 2)->first();
 @endphp
 <!-- header-start -->
 <section class="hdr_section">
@@ -9,7 +9,12 @@ $social = DB::table('socials')->first();
 <div class="row">
 <div class="col-xs-6 col-md-2 col-sm-4">
 <div class="header_logo">
-<a href=""><img src="{{asset('frontend/assets/img/demo_logo.png')}}"></a> 
+@if($horizontal == NULL)
+
+@else
+<a href="{{$horizontal->link}}" target="blank"><img src="{{asset($horizontal->ads)}}"></a> 
+
+@endif
 </div>
 </div>              
 <div class="col-xs-6 col-md-8 col-sm-8">

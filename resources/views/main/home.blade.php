@@ -55,7 +55,17 @@ width="800px" alt="Notebook"></a></div>
 <!-- add-start -->
 <div class="row">
 <div class="col-md-12 col-sm-12">
-<div class="add"><img src="{{asset('frontend/assets/img/top-ad.jpg')}}" alt="" /></div>
+@php 
+$horizontal = DB::table('ads')->where('type', 2)->skip(1)->first();
+@endphp
+<div class="add">
+@if($horizontal == NULL)
+
+@else
+<a href="{{$horizontal->link}}" target="_blank"><img src="{{asset($horizontal->ads)}}"></a> 
+
+@endif
+</div>
 </div>
 </div><!-- /.add-close -->
 
@@ -182,7 +192,17 @@ More
 <!-- add-start -->
 <div class="row">
 <div class="col-md-12 col-sm-12">
-<div class="sidebar-add"><img src="{{asset('frontend/assets/img/add_01.jpg')}}" alt="" /></div>
+@php 
+$vertical = DB::table('ads')->where('type', 1)->first();
+@endphp
+<div class="sidebar-add">
+@if($vertical == NULL)
+
+@else
+<a href="{{$vertical->link}}" target="_blank"><img src="{{asset($vertical->ads)}}" alt="" />
+</a>
+@endif
+</div>
 </div>
 </div><!-- /.add-close -->
 @php
@@ -210,8 +230,16 @@ facebook page here
 <!-- add-start -->
 <div class="row">
 <div class="col-md-12 col-sm-12">
+@php 
+$vertical = DB::table('ads')->where('type', 1)->skip(1)->first();
+@endphp
 <div class="sidebar-add">
-<img src="{{asset('frontend/assets/img/add_01.jpg')}}" alt="" />
+@if($vertical == NULL)
+
+@else
+<a href="{{$vertical->link}}" target="_blank"><img src="{{asset($vertical->ads)}}" alt="" />
+</a>
+@endif
 </div>
 </div>
 </div><!-- /.add-close -->
@@ -436,11 +464,31 @@ All News
 <!-- add-start -->
 <div class="row">
 <div class="col-md-6 col-sm-6">
-<div class="add"><img src="{{asset('frontend/assets/img/top-ad.jpg')}}" alt="" /></div>
+@php 
+$horizontal = DB::table('ads')->where('type', 2)->skip(3)->first();
+@endphp
+<div class="add">
+@if($horizontal == NULL)
+
+@else
+<a href="{{$horizontal->link}}" target="_blank">
+<img src="{{asset($horizontal->ads)}}"></a> 
+
+@endif
 </div>
 <div class="col-md-6 col-sm-6">
-<div class="add"><img src="{{asset('frontend/assets/img/top-ad.jpg')}}" alt="" /></div>
-</div>
+
+@php 
+$horizontal = DB::table('ads')->where('type', 2)->skip(4)->first();
+@endphp
+<div class="add">
+@if($horizontal == NULL)
+
+@else
+<a href="{{$horizontal->link}}" target="_blank">
+<img src="{{asset($horizontal->ads)}}"></a> 
+
+@endif
 </div><!-- /.add-close -->
 
 </div>
@@ -680,8 +728,7 @@ Highest
 
 
 <!-- Namaj Times -->
-<div class="cetagory-title-03">Prayer Time </div>
-Prayer Times count option here
+
 <!-- Namaj Times -->
 <div class="cetagory-title-03">Old News </div>
 <form action="" method="post">
