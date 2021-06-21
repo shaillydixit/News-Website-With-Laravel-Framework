@@ -10,6 +10,7 @@ use App\Http\Controllers\Backend\PostController;
 use App\Http\Controllers\Backend\SettingController;
 use App\Http\Controllers\Backend\GalleryController;
 use App\Http\Controllers\Backend\AdsController;
+use App\Http\Controllers\Backend\RoleController;
 use App\Http\Controllers\Frontend\ExtraController;
 /*
 |--------------------------------------------------------------------------
@@ -194,3 +195,9 @@ Route::get('/add/ads', [AdsController::class, 'AddAds'])->name('add.ads');
 Route::post('/store/ads', [AdsController::class, 'StoreAds'])->name('store.ads');
 
 Route::get('/delete/ads/{id}', [AdsController::class, 'DeleteAds'])->name('delete.ads');
+
+//writerrow
+
+Route::get('/add/writer', [RoleController::class, 'InsertWriter'])->name('add.writer');
+
+Route::post('/store/writer', [RoleController::class, 'StoreWriter'])->name('store.writer');
