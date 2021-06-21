@@ -277,7 +277,7 @@ All News
 <div class="row">
 <div class="col-md-6 col-sm-6">
 <div class="top-news">
-<a href="#"><img src="{{ asset( $threecatpostbig->image) }}" alt="Notebook"></a>
+<a href="{{ URL::to('view/post/'.$threecatpostbig->id) }}"><img src="{{ asset( $threecatpostbig->image) }}" alt="Notebook"></a>
 <h4 class="heading-02"><a href="#">
 @if(session()->get('lang')== 'english')
 {{ $threecatpostbig->title_en }}
@@ -329,7 +329,7 @@ All News
 <div class="row">
 <div class="col-md-6 col-sm-6">
 <div class="top-news">
-<a href="#"><img src="{{ asset($fourcatpostbig->image) }}" alt="Notebook"></a>
+<a href="{{ URL::to('view/post/'.$fourcatpostbig->id) }}"><img src="{{ asset($fourcatpostbig->image) }}" alt="Notebook"></a>
 <h4 class="heading-02"><a href="#"> 
 @if(session()->get('lang')== 'english')
 {{ $fourcatpostbig->title_en }}
@@ -384,7 +384,7 @@ All News
 <div class="row">
 <div class="col-md-6 col-sm-6">
 <div class="top-news">
-<a href="#"><img src="{{ asset($fourcatpostbig->image) }}" alt="Notebook"></a>
+<a href="{{ URL::to('view/post/'.$fourcatpostbig->id) }}"><img src="{{ asset($fourcatpostbig->image) }}" alt="Notebook"></a>
 <h4 class="heading-02"><a href="#">
 @if(session()->get('lang')== 'english')
 {{ $fourcatpostbig->title_en }}

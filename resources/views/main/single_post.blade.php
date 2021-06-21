@@ -47,7 +47,7 @@
 						
 						</div>
 						<div class="col-md-6 col-sm-6 pull-right"> 						
-	
+						<div class="sharethis-inline-share-buttons"></div>
 
 
 						</div>						
@@ -60,8 +60,9 @@
 			<div class="col-md-8 col-sm-8">
 				<div class="single-news">
 					<img src="{{ asset($post->image) }}" alt="" />
+
 	 <br><br>
-	 <div class="sharethis-inline-share-buttons"></div>	
+
 
 	 <h4 class="caption"> 
 	  @if(session()->get('lang')== 'english')
@@ -80,13 +81,17 @@
 	</p>
 				</div>
 				<!-- ********* -->
- <div class="sharethis-inline-share-buttons"></div>	
+<div class="sharethis-inline-share-buttons"></div>	
+
 <br><br>
 
 <div id="fb-root"></div>
 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v8.0" nonce="ClFC86MV"></script>
 
 <div class="fb-comments" data-href="{{ Request::url() }}" data-numposts="8" data-width=""></div>
+
+
+<br><br>
 
 @php
 $more = DB::table('post')->where('category_id',$post->category_id)->orderBy('id','desc')->limit(6)->get();
@@ -116,14 +121,27 @@ $more = DB::table('post')->where('category_id',$post->category_id)->orderBy('id'
 					 @endforeach
 				</div>
  
+
+
+
+ 
  
 			</div>
 			<div class="col-md-4 col-sm-4">
 				<!-- add-start -->	
 					<div class="row">
 						<div class="col-md-12 col-sm-12">
-	 <div class="sidebar-add"><img src="{{asset('frontend/assets/img/add_01.jpg')}}" alt="" /></div>
-						</div>
+						@php 
+$vertical = DB::table('ads')->where('type', 1)->first();
+@endphp
+	 <div class="sidebar-add">
+	 
+	 @if($vertical == NULL)
+
+@else
+<a href="{{$vertical->link}}" target="_blank"><img src="{{asset($vertical->ads)}}" alt="" />
+</a>
+@endif						</div>
 					</div><!-- /.add-close -->
 
 
@@ -216,11 +234,20 @@ $highest = DB::table('post')->orderBy('id','asc')->inRandomOrder()->limit(8)->ge
 			</div>
 		</div>
 	</div>
-				<!-- add-start -->	
-					<div class="row">
+			<!-- add-start -->	
+			<div class="row">
 						<div class="col-md-12 col-sm-12">
-							<div class="sidebar-add"><img src="{{asset('frontend/assets/img/add_01.jpg')}}" alt="" /></div>
-						</div>
+						@php 
+$vertical = DB::table('ads')->where('type', 1)->skip(1)->first();
+@endphp
+	 <div class="sidebar-add">
+	 
+	 @if($vertical == NULL)
+
+@else
+<a href="{{$vertical->link}}" target="_blank"><img src="{{asset($vertical->ads)}}" alt="" />
+</a>
+@endif						</div>
 					</div><!-- /.add-close -->
 			</div>
 		  </div>
