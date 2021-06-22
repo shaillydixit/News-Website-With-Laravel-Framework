@@ -11,6 +11,7 @@ use App\Http\Controllers\Backend\SettingController;
 use App\Http\Controllers\Backend\GalleryController;
 use App\Http\Controllers\Backend\AdsController;
 use App\Http\Controllers\Backend\RoleController;
+use App\Http\Controllers\Backend\WebsiteController;
 use App\Http\Controllers\Frontend\ExtraController;
 /*
 |--------------------------------------------------------------------------
@@ -209,3 +210,8 @@ Route::get('/edit/writer/{id}', [RoleController::class, 'EditWriter'])->name('ed
 Route::post('/update/writer/{id}', [RoleController::class, 'UpdateWriter'])->name('update.writer');
 
 Route::get('/delete/writer/{id}', [RoleController::class, 'DeleteWriter'])->name('delete.writer');
+
+//allwebsite setting
+Route::get('/website/setting', [WebsiteController::class, 'WebsiteSetting'])->name('website.setting');
+
+Route::post('/update/website/{id}', [WebsiteController::class, 'UpdateWebsiteSetting'])->name('update.website');

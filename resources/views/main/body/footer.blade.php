@@ -32,24 +32,39 @@
 </div>
 </div>
 </section><!-- /.top-footer-close -->
-
+@php 
+$websitesetting = DB::table('websitesettings')->first();
+@endphp
 <!-- middle-footer-start -->	
 <section class="middle-footer">
 <div class="container-fluid">
 <div class="row">
 <div class="col-md-4 col-sm-4">
 <div class="editor-one">
-Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is 
+Conpany Address: <br>
+@if(session()->get('lang') == 'english')
+{!!$websitesetting->address_en!!}
+@else
+{!!$websitesetting->address_hin!!}
+@endif
+
 </div>
 </div>
 <div class="col-md-4 col-sm-4">
 <div class="editor-two">
-Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is 
+Company Phone: <br>
+@if(session()->get('lang') == 'english')
+{{$websitesetting->phone_en}}
+@else
+{{$websitesetting->phone_hin}}
+@endif
+
 </div>
 </div>
 <div class="col-md-4 col-sm-4">
 <div class="editor-three">
-Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is 
+Company Email: <br>
+{{$websitesetting->email}}
 </div>
 </div>
 </div>
@@ -62,7 +77,7 @@ Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying ou
 <div class="row">
 <div class="col-md-6 col-sm-6">
 <div class="copyright">						
-All rights reserved © 2020 EasyLearning
+All rights reserved © 2021 Shailly Dixit
 </div>
 </div>
 <div class="col-md-6 col-sm-6">
