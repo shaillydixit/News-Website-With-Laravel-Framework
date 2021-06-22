@@ -233,7 +233,7 @@
             <div class="collapse" id="auth">
                 <ul class="nav flex-column sub-menu">
                     <li class="nav-item"> <a class="nav-link" href="{{route('add.writer')}}">Add User</a></li>
-                    <li class="nav-item"> <a class="nav-link" href="pages/samples/error-404.html"> All User</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="{{route('all.writer')}}"> All User</a></li>
                 </ul>
             </div>
         </li>
