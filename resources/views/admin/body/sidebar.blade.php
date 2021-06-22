@@ -1,3 +1,8 @@
+@php 
+$editData = DB::table('users')->where('id', Auth::user()->id)->first();
+@endphp
+
+
 <nav class="sidebar sidebar-offcanvas" id="sidebar">
     <div class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
         <a class="sidebar-brand brand-logo" href="index.html"><img src="{{asset('backend/assets/images/logo.svg')}}"
@@ -33,7 +38,7 @@
                         </div>
                     </a>
                     <div class="dropdown-divider"></div>
-                    <a href="#" class="dropdown-item preview-item">
+                    <a href="{{route('show.password')}}" class="dropdown-item preview-item">
                         <div class="preview-thumbnail">
                             <div class="preview-icon bg-dark rounded-circle">
                                 <i class="mdi mdi-onepassword  text-info"></i>

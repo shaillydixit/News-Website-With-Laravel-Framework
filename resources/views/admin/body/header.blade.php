@@ -150,6 +150,10 @@
                   <p class="p-3 mb-0 text-center">See all notifications</p>
                 </div>
               </li>
+
+              @php 
+$editData = DB::table('users')->where('id', Auth::user()->id)->first();
+@endphp
               <li class="nav-item dropdown">
                 <a class="nav-link" id="profileDropdown" href="#" data-toggle="dropdown">
                   <div class="navbar-profile">

@@ -222,3 +222,7 @@ Route::get('/account/setting', [AdminController::class, 'AccountSetting'])->name
 Route::get('/profile/edit', [AdminController::class, 'ProfileEdit'])->name('profile.edit');
 
 Route::post('/profile/store', [AdminController::class, 'ProfileStore'])->name('profile.store');
+
+Route::get('/show/password', [AdminController::class, 'ShowPassword'])->name('show.password');
+
+Route::post('/change/password', [AdminController::class, 'ChangePassword'])->name('change.password');
