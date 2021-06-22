@@ -10,7 +10,7 @@
             <div class="profile-desc">
                 <div class="profile-pic">
                     <div class="count-indicator">
-                        <img class="img-xs rounded-circle " src="{{asset('backend/assets/images/faces/face15.jpg')}}"
+                        <img class="img-xs rounded-circle " src="{{(!empty($editData->image))? url('upload/user_images/'.$editData->image):url('upload/no.jpeg')}}"
                             alt="">
                         <span class="count bg-success"></span>
                     </div>
@@ -22,7 +22,7 @@
                 <a href="#" id="profile-dropdown" data-toggle="dropdown"><i class="mdi mdi-dots-vertical"></i></a>
                 <div class="dropdown-menu dropdown-menu-right sidebar-dropdown preview-list"
                     aria-labelledby="profile-dropdown">
-                    <a href="#" class="dropdown-item preview-item">
+                    <a href="{{route('account.setting')}}" class="dropdown-item preview-item">
                         <div class="preview-thumbnail">
                             <div class="preview-icon bg-dark rounded-circle">
                                 <i class="mdi mdi-settings text-primary"></i>

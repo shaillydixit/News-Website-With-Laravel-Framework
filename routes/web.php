@@ -215,3 +215,10 @@ Route::get('/delete/writer/{id}', [RoleController::class, 'DeleteWriter'])->name
 Route::get('/website/setting', [WebsiteController::class, 'WebsiteSetting'])->name('website.setting');
 
 Route::post('/update/website/{id}', [WebsiteController::class, 'UpdateWebsiteSetting'])->name('update.website');
+
+//acc setting
+Route::get('/account/setting', [AdminController::class, 'AccountSetting'])->name('account.setting');
+
+Route::get('/profile/edit', [AdminController::class, 'ProfileEdit'])->name('profile.edit');
+
+Route::post('/profile/store', [AdminController::class, 'ProfileStore'])->name('profile.store');
